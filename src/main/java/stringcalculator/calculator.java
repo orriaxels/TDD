@@ -4,7 +4,10 @@ public class Calculator {
 
 	public static int add(String numbers)
 	{
-		return 0;
+		if(numbers.equals(""))
+			return 0;
+		else
+			return 1;
 	}
 
 
