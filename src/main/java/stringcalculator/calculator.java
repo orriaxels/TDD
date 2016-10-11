@@ -8,8 +8,8 @@ public class Calculator {
 			return 0;
 		else if(numbers.contains(","))
 		{
-			String [] array = numbers.split(",");
-			return toInt(array[0]) + toInt(array[1]);
+			
+			return sum(splitNumbers(numbers));
 		}
 		else
 			return 1;
@@ -18,6 +18,21 @@ public class Calculator {
 	private static int toInt(String numbers)
 	{
 		return Integer.parseInt(numbers);
+	}
+
+	private static String[] splitNumbers(String numbers)
+	{
+		return numbers.split(",");
+	}
+
+	private static int sum(String[] numbers)
+	{
+		int total = 0;
+		for(String number : numbers)
+		{
+			total += toInt(number);
+		}
+		return total;
 	}
 
 }
