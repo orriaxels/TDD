@@ -51,4 +51,10 @@ public class CalculatorTest {
 		Calculator.add("-5,7");
 	}
 
+	@Test
+	public void testLarge()
+	{
+		assertEquals(2, Calculator.add("2,10000"));
+	}
+
 }

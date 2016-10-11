@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Calculator {
 
 	private static String splitter = ",|\\n";
+	private static int MAX = 1000;
 
 	public static int add(String numbers)
 	{
@@ -20,8 +21,6 @@ public class Calculator {
 			String neg = createNegNumbers(negativeNumbers);
 			throw new IllegalArgumentException("Negatives not allowed: " + neg);
 		}
-
-
 
 		if(numbers.equals(""))
 			return 0;
@@ -46,7 +45,9 @@ public class Calculator {
 		int total = 0;
 		for(String number : numbers)
 		{
-			total += toInt(number);
+
+			if(toInt(number) < MAX)
+				total += toInt(number);
 		}
 		return total;
 	}
@@ -72,7 +73,6 @@ public class Calculator {
 			else
 				negString = negString + "," + o;
 		}
-
 		return negString;
 	}
 }
