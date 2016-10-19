@@ -57,4 +57,10 @@ public class CalculatorTest {
 		assertEquals(2, Calculator.add("2,10000"));
 	}
 
+	@Test
+	public void testDelim()
+	{
+		assertEquals(3, Calculator.add("//;\n1;2"));
+	}
+
 }
